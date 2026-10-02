@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanguard Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <h1>Vanguard</h1>
+    <p>Autonomous AD Defense</p>
+  </div>
+  <div class="live">
+    <span class="dot"></span>
+    Live
+  </div>
+</header>
+
+<main>
+
+  <section class="stats">
+    <div class="card">
+      <h3>Attack Paths Found</h3>
+      <p class="big" id="found">12</p>
+    </div>
+    <div class="card">
+      <h3>Fixes Applied</h3>
+      <p class="big green" id="fixed">10</p>
+    </div>
+    <div class="card">
+      <h3>Pending Fixes</h3>
+      <p class="big orange" id="pending">2</p>
+    </div>
+    <div class="card">
+      <h3>Risk Score</h3>
+      <p class="big" id="risk">15</p>
+      <span class="tag green">Low Risk</span>
+    </div>
+  </section>
+
+  <section class="compare">
+    <h2>Before vs After</h2>
+    <div class="compare-box">
+      <div class="side before">
+        <h3>Before Vanguard</h3>
+        <p>Attack Paths <strong>12</strong></p>
+        <p>Risk Score <strong>95</strong></p>
+        <p>Domain Admin Reachable <strong class="red">Yes</strong></p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="side after">
+        <h3>After Vanguard</h3>
+        <p>Attack Paths <strong>2</strong></p>
+        <p>Risk Score <strong>15</strong></p>
+        <p>Domain Admin Reachable <strong class="green">No</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="paths">
+    <h2>Attack Paths</h2>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="fixed">Fixed</button>
+      <button class="filter" data-filter="pending">Pending</button>
+    </div>
+
+    <div id="list">
+
+      <div class="item fixed">
+        <div class="item-top">
+          <h3>Attack Path 1</h3>
+          <span class="tag green">Fixed</span>
+        </div>
+        <p>Path Helpdesk → Server01 → Domain Admin</p>
+        <p>Fix Removed GenericAll permission</p>
+        <p>Verified Yes</p>
+      </div>
+
+      <div class="item fixed">
+        <div class="item-top">
+          <h3>Attack Path 2</h3>
+          <span class="tag green">Fixed</span>
+        </div>
+        <p>Path User01 → FileShare → AdminGroup</p>
+        <p>Fix Removed write permission</p>
+        <p>Verified Yes</p>
+      </div>
+
+      <div class="item pending">
+        <div class="item-top">
+          <h3>Attack Path 3</h3>
+          <span class="tag orange">Pending</span>
+        </div>
+        <p>Path Guest → WebServer → DC01</p>
+        <p>Fix Recommended Disable Guest account</p>
+        <p>Verified Not yet</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Vanguard Autonomous AD Defense</p>
+  <p>Backend and Dashboard by Hana Berhe</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
